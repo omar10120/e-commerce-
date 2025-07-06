@@ -5,6 +5,7 @@ import { Product } from "@/types/Product";
 import { Button } from "@/components/ui/Button";
 import { Rating } from "@/components/ui/Rating";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { useCartStore } from "@/hooks/useCartStore";
 
 interface ProductCardProps {
   product: Product;
@@ -12,6 +13,19 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, loading }) => {
+  const addItem = useCartStore((s) => s.addItem);
+
+  const handleAddToCart = () => {
+    const defaultVariant = product.variants[0];
+    if (defaultVariant) {
+      addItem({
+        productId: product.id,
+        selectedVariantId: defaultVariant.id,
+        quantity: 1
+      });
+    }
+  };
+
   if (loading) {
     return (
       <div className="rounded-lg border p-4 w-full max-w-xs">
@@ -38,7 +52,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, loading }) =>
       </Link>
       <span className="text-primary font-bold mb-1">Dhs. {product.price.toFixed(2)}</span>
       <Rating value={product.rating} className="mb-2" />
-      <Button className="mt-auto" aria-label="Add to cart" disabled>
+      <Button 
+        className="mt-auto" 
+        aria-label="Add to cart" 
+        onClick={handleAddToCart}
+        disabled={!product.variants[0]}
+      >
         Add to cart
       </Button>
     </div>
