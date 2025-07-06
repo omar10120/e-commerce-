@@ -6,28 +6,61 @@ import { AddToCart } from "@/components/product/AddToCart";
 import { Rating } from "@/components/ui/Rating";
 import { mockProducts } from "@/data/mockProducts";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface ProductDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const [product, setProduct] = React.useState(mockProducts.find((p) => p.slug === ""));
+  const [product, setProduct] = React.useState<typeof mockProducts[0] | null>(null);
   const [selectedVariantId, setSelectedVariantId] = React.useState("");
-  const [selectedVariant, setSelectedVariant] = React.useState(product?.variants[0]);
+  const [selectedVariant, setSelectedVariant] = React.useState<typeof mockProducts[0]['variants'][0] | null>(null);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const loadProduct = async () => {
-      const resolvedParams = await params;
-      const foundProduct = mockProducts.find((p) => p.slug === resolvedParams.slug);
-      setProduct(foundProduct);
-      setSelectedVariantId(foundProduct?.variants[0]?.id || "");
-      setSelectedVariant(foundProduct?.variants[0]);
+      try {
+        const resolvedParams = await params;
+        const foundProduct = mockProducts.find((p) => p.slug === resolvedParams.slug);
+        
+        if (!foundProduct) {
+          setLoading(false);
+          return;
+        }
+        
+        setProduct(foundProduct);
+        setSelectedVariantId(foundProduct.variants[0]?.id || "");
+        setSelectedVariant(foundProduct.variants[0] || null);
+      } catch (error) {
+        console.error('Error loading product:', error);
+      } finally {
+        setLoading(false);
+      }
     };
     loadProduct();
   }, [params]);
 
-  if (!product || !selectedVariant) return notFound();
+  if (loading) {
+    return (
+      <div className="py-8 max-w-4xl mx-auto">
+        <Skeleton className="h-8 w-64 mb-4" />
+        <div className="grid md:grid-cols-2 gap-8">
+          <Skeleton className="h-96 w-full" />
+          <div className="space-y-4">
+            <Skeleton className="h-8 w-3/4" />
+            <Skeleton className="h-6 w-1/2" />
+            <Skeleton className="h-6 w-1/3" />
+            <Skeleton className="h-24 w-full" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!product || !selectedVariant) {
+    return notFound();
+  }
 
   return (
     <div className="py-8 max-w-4xl mx-auto">
