@@ -22,7 +22,7 @@ export const AddToCart: React.FC<AddToCartProps> = ({ product, selectedVariantId
   };
 
   return (
-    <Button onClick={handleAdd} loading={loading} aria-label="Add to cart">
+    <Button onClick={handleAdd} loading={loading} aria-label="Add to cart" >
       Add to cart
     </Button>
   );

@@ -53,7 +53,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, loading }) =>
       <span className="text-primary-secondary font-bold mb-1">Dhs. {product.price.toFixed(2)}</span>
       <Rating value={product.rating} className="mb-2" />
       <Button 
-        className="mt-auto bg-primary-secondary" 
+        className="mt-auto bg-primary-secondary hover:bg-primary-secondary/90" 
         aria-label="Add to cart" 
         onClick={handleAddToCart}
         disabled={!product.variants[0]}
