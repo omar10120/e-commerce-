@@ -90,7 +90,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen flex flex-col text-black">
+    <div className="bg-white  min-h-screen flex flex-col text-black">
       {/* Carousel */}
       <div ref={sliderRef} className="keen-slider h-[400px] md:h-[500px] w-full overflow-hidden">
         {sliderImages.map((img, idx) => (
@@ -137,7 +137,7 @@ export default function HomePage() {
             <Link
               key={cat.id}
               href={`/products?category=${cat.slug}`}
-              className="group flex flex-col items-center p-4 bg-white dark:bg-gray-900 rounded-xl shadow hover:shadow-lg transition border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-[${MAIN_COLOR}]"
+              className="group flex flex-col items-center p-4 bg-white  rounded-xl shadow hover:shadow-lg transition border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-[${MAIN_COLOR}]"
             >
               <span className="block w-16 h-16 bg-gradient-to-tr from-indigo-200 to-indigo-400 rounded-full mb-2 flex items-center justify-center">
                 <Image src={`/assets/food${(i+2)%9+1}.png`} alt={cat.name} width={48} height={48} className="rounded-full object-cover" />
@@ -180,7 +180,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-6 text-center text-[${MAIN_COLOR}]">Real Reviews From Our Customers</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((r, i) => (
-            <div key={i} className="bg-white dark:bg-gray-900 rounded-xl shadow p-6 flex flex-col items-center text-center">
+            <div key={i} className="bg-white  rounded-xl shadow p-6 flex flex-col items-center text-center">
               <Image src={r.img} alt={r.name} width={80} height={80} className="rounded-full mb-4 object-cover" />
               <p className="text-lg font-medium mb-2">{r.text}</p>
               <span className="text-sm text-gray-500">- {r.name}</span>
@@ -194,7 +194,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold mb-6 text-center text-[${MAIN_COLOR}]">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <details key={i} className="group border rounded-lg p-4 bg-white dark:bg-gray-900">
+            <details key={i} className="group border rounded-lg p-4 bg-white ">
               <summary className="font-semibold cursor-pointer text-[${MAIN_COLOR}] group-open:underline">{faq.q}</summary>
               <p className="mt-2 text-gray-700 dark:text-gray-300">{faq.a}</p>
             </details>

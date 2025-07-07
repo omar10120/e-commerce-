@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
       {/* Main header */}
-      <header className="sticky top-0 z-30 w-full bg-white dark:bg-gray-900 shadow-sm">
+      <header className="sticky top-0 z-30 w-full bg-white  shadow-sm">
         <nav className="flex items-center justify-between h-20 max-w-7xl mx-auto px-8 text-black">
           {/* Left: Navigation */}
           <div className="flex items-center gap-8 flex-1">
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
           </div>
         </nav>
         {/* {menuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 px-4 py-2 animate-fade-in-down ">
+          <div className="md:hidden bg-white  border-t border-gray-200 dark:border-gray-800 px-4 py-2 animate-fade-in-down ">
               <Link href="/" className="block py-2   ">Home</Link>
               <Link href="/products" className="block py-2 ">Shop</Link>
             <Link href="/contact" className="block py-2 ">Contact</Link>

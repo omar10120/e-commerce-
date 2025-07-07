@@ -12,7 +12,7 @@ export const CartSheet: React.FC<{ open: boolean; onClose: () => void }> = ({ op
   if (!open) return null;
 
   return (
-    <aside className="fixed top-0 right-0 w-full max-w-md h-full bg-white dark:bg-gray-900 shadow-lg z-50 flex flex-col">
+    <aside className="fixed top-0 right-0 w-full max-w-md h-full bg-white  shadow-lg z-50 flex flex-col">
       <div className="flex justify-between items-center p-4 border-b">
         <h2 className="text-xl font-bold">Your Cart</h2>
         <button onClick={onClose} aria-label="Close cart" className="text-2xl">×</button>
