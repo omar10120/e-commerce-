@@ -8,8 +8,8 @@ export const mockProducts: Product[] = [
     description: "Delicious chocolate-coated treats in a beautiful tin.",
     price: 49.99,
     images: [
-      "/assets/food.png", 
-      "/assets/food2.png"
+      "/assets/food8.png", 
+      "/assets/food7.png"
     ],
     variants: [
       {
@@ -24,7 +24,7 @@ export const mockProducts: Product[] = [
         name: "Strawberry",
         color: "pink",
         price: 54.99,
-        images: ["/assets/food2.png"],
+        images: ["/assets/food6.png"],
         stock: 5
       }
     ],
@@ -94,7 +94,7 @@ export const mockProducts: Product[] = [
     slug: "pianta-strawberry-coated-chocolate-50gm",
     description: "Strawberry-flavored chocolate treats.",
     price: 24.99,
-    images: ["/assets/food.png"],
+    images: ["/assets/food3.png"],
     variants: [
       {
         id: "var-5-1",
@@ -114,14 +114,14 @@ export const mockProducts: Product[] = [
     slug: "pianta-raspberry-coated-chocolate-50gm",
     description: "Raspberry-flavored chocolate treats.",
     price: 24.99,
-    images: ["/assets/food2.png"],
+    images: ["/assets/food5.png"],
     variants: [
       {
         id: "var-6-1",
         name: "Raspberry",
         color: "red",
         price: 24.99,
-        images: ["/assets/food2.png"],
+        images: ["/assets/food5.png"],
         stock: 6
       }
     ],
@@ -191,7 +191,7 @@ export const mockProducts: Product[] = [
     slug: "freeze-dried-figs-no-sugar-added",
     description: "Naturally sweet freeze-dried figs.",
     price: 39.99,
-    images: ["/assets/food.png"],
+    images: ["/assets/food2.png"],
     variants: [
       {
         id: "var-10-1",
@@ -210,13 +210,13 @@ export const mockProducts: Product[] = [
     slug: "freeze-dried-strawberry-yoghurt-bites-50g",
     description: "Yogurt-covered freeze-dried strawberry bites.",
     price: 49.99,
-    images: ["/assets/food2.png"],
+    images: ["/assets/food5.png"],
     variants: [
       {
         id: "var-11-1",
         name: "Yoghurt Strawberry",
         price: 49.99,
-        images: ["/assets/food2.png"],
+        images: ["/assets/food5.png"],
         stock: 9
       }
     ],
@@ -286,7 +286,7 @@ export const mockProducts: Product[] = [
     slug: "pistachio-kunafa-chocolate-bar-dubai-chocolate",
     description: "A fusion of pistachio, kunafa, and chocolate in a bar.",
     price: 39.99,
-    images: ["/assets/food.png"],
+    images: ["/assets/food3.png"],
     variants: [
       {
         id: "var-15-1",

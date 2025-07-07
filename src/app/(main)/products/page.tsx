@@ -32,14 +32,14 @@ export default function ProductsPage() {
   }, [search, category]);
 
   return (
-    <div className="py-8">
-      <h2 className="text-2xl font-bold mb-6">All Products</h2>
+    <div className="py-8 bg-[white] px-4 text-black">
+      <h2 className="text-2xl font-bold mb-6 text-black">All Products</h2>
       <div className="flex flex-col sm:flex-row gap-4 mb-6 items-center">
         <Search value={search} onChange={setSearch} placeholder="Search products..." />
         <select
           value={category}
           onChange={e => setCategory(e.target.value)}
-          className="rounded border px-3 py-2 min-w-[180px]"
+          className="rounded border px-3 py-2 min-w-[180px] text-black"
           aria-label="Filter by category"
         >
           <option value="">All Categories</option>

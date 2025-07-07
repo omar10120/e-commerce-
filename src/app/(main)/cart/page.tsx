@@ -11,11 +11,11 @@ export default function CartPage() {
   const products = mockProducts;
 
   return (
-    <div className="py-8 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Your Cart</h2>
+    <div className="py-8 max-w-2xl mx-auto text-black">
+      <h2 className="text-2xl font-bold mb-6 text-black">Your Cart</h2>
       {items.length === 0 ? (
         <EmptyState title="Your cart is empty" description="Browse products and add them to your cart." />
-      ) : (
+      ) : ( 
         <>
           <div className="space-y-4 mb-8">
             {items.map((item) => {

@@ -3,9 +3,9 @@ import * as React from "react";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-2xl mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Contact Us</h1>
-      <p className="mb-8 text-gray-600 dark:text-gray-300">Have a question or want to get in touch? Fill out the form below and we’ll get back to you as soon as possible.</p>
+    <div className="max-w-2xl mx-auto py-12 px-4 ">
+      <h1 className="text-3xl font-bold mb-6 text-white">Contact Us</h1>
+      <p className="mb-8 text-gray-600 dark:text-gray-300 text-black">Have a question or want to get in touch? Fill out the form below and we’ll get back to you as soon as possible.</p>
       <form className="space-y-6" autoComplete="off" onSubmit={e => e.preventDefault()}>
         <div>
           <label htmlFor="name" className="block font-medium mb-1">Name</label>
@@ -19,7 +19,8 @@ export default function ContactPage() {
           <label htmlFor="message" className="block font-medium mb-1">Message</label>
           <textarea id="message" name="message" rows={5} required className="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
         </div>
-        <button type="submit" className="bg-primary text-white px-6 py-2 rounded font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary">Send Message</button>
+        <button type="submit" className="bg-primary-secondary
+         text-white px-6 py-2 rounded font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 ">Send Message</button>
       </form>
       <div className="mt-12 border-t pt-8">
         <h2 className="text-xl font-bold mb-2">Business Info</h2>
