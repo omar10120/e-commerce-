@@ -50,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, loading }) =>
       <Link href={`/products/${product.slug}`} className="font-semibold text-lg mb-1 hover:underline">
         {product.name}
       </Link>
-      <span className="text-primary font-bold mb-1">Dhs. {product.price.toFixed(2)}</span>
+      <span className="text-primary-secondary font-bold mb-1">Dhs. {product.price.toFixed(2)}</span>
       <Rating value={product.rating} className="mb-2" />
       <Button 
         className="mt-auto bg-primary-secondary" 
